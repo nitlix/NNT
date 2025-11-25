@@ -1,7 +1,5 @@
 import { NextRequest, NextResponse } from "next/server";
 
-import { signalsInjector } from "nitlix-signals";
-
 const locales = ["en", "de"];
 const defaultLocale = "en";
 
@@ -22,7 +20,7 @@ function getLocale(request: NextRequest) {
     return matchedLocale || defaultLocale;
 }
 
-export default function middleware(request: NextRequest) {
+export default function (request: NextRequest) {
     // =================================
     // Create a response object
     // =================================
@@ -45,11 +43,6 @@ export default function middleware(request: NextRequest) {
     // Allow server components to access the URL
     //==================================================
     setHeader("x-url", request.url);
-
-    //================================
-    // Inject signals
-    //================================
-    response = signalsInjector(request, response).response;
 
     //====================
     // Language setting

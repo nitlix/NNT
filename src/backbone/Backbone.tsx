@@ -14,7 +14,6 @@ import "./Backbone.scss";
 
 // Massive props to Studio Freight for creating Lenis.
 import Lenis from "lenis";
-import NParallax from "nparallax";
 import { useRouter } from "next/navigation";
 import { LenisScrolltoProperties } from "@/var/types";
 
@@ -46,9 +45,9 @@ type SPContextType = {
     SPController: SPController;
     setSPController: React.Dispatch<React.SetStateAction<SPController>>;
     // Parallax stuff
-    getParallax: () => NParallax | null; // Get it directly
-    parallax: NParallax | null; // When you want to listen
-    setParallax: React.Dispatch<React.SetStateAction<NParallax | null>>;
+    // getParallax: () => NParallax | null; // Get it directly
+    // parallax: NParallax | null; // When you want to listen
+    // setParallax: React.Dispatch<React.SetStateAction<NParallax | null>>;
 };
 
 type SPController = "ALLOWINIT" | "DISABLE" | "ENABLE" | "IDLE";
@@ -66,7 +65,7 @@ export default function ({ children, className = "" }: BackboneProps) {
     // Feel free to edit/remove this.
     //================================
     const [scroll, setScroll] = useState<Lenis | null>(null);
-    const [parallax, setParallax] = useState<NParallax | null>(null);
+    // const [parallax, setParallax] = useState<NParallax | null>(null);
     const [SPController, setSPController] = useState<SPController>("ALLOWINIT");
 
     function onResize() {
@@ -81,27 +80,18 @@ export default function ({ children, className = "" }: BackboneProps) {
         return scroll;
     }
 
-    function getParallax(): NParallax | null {
-        return parallax;
-    }
+    // function getParallax(): NParallax | null {
+    //     return parallax;
+    // }
 
     // SP Main Controller
     useEffect(() => {
         function initSP() {
             const ls = new Lenis({
-                easing: (x) => {
-                    return x === 0
-                        ? 0
-                        : x === 1
-                        ? 1
-                        : x < 0.5
-                        ? Math.pow(2, 20 * x - 10) / 2
-                        : (2 - Math.pow(2, -20 * x + 10)) / 2;
-                },
                 lerp: 0.15,
             });
 
-            const np = new NParallax();
+            // const np = new NParallax();
 
             function raf(time: number) {
                 ls.raf(time);
@@ -109,12 +99,12 @@ export default function ({ children, className = "" }: BackboneProps) {
             }
             requestAnimationFrame(raf);
             setScroll(ls);
-            setParallax(np);
+            // setParallax(np);
         }
 
         function destroySP() {
             getScroll()?.destroy();
-            getParallax()?.destroy();
+            // getParallax()?.destroy();
         }
 
         switch (SPController) {
@@ -244,9 +234,9 @@ export default function ({ children, className = "" }: BackboneProps) {
                         scroll,
                         SPController,
                         setSPController,
-                        parallax,
-                        setParallax,
-                        getParallax,
+                        // parallax,
+                        // setParallax,
+                        // getParallax,
                     }}
                 >
                     {children}

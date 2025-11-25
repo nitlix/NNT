@@ -1,6 +1,4 @@
-@tailwind base;
-@tailwind components;
-@tailwind utilities;
+@use "tailwindcss";
 
 :root {
     --spacing: 7rem;
@@ -17,8 +15,7 @@
 }
 
 * {
-    // transition: var(--transition);
-    @apply m-0 p-0 box-border;
+    @apply m-0 box-border;
 }
 
 ._nitlix {
@@ -33,7 +30,7 @@ body {
     @apply text-black bg-white grid place-items-center;
 }
 
-[data-theme="dark"] body{
+[data-theme="dark"] body {
     @apply bg-black text-white;
 }
 
