@@ -23,6 +23,10 @@
 
     > * {
         @apply px-[var(--spacing)];
+
+        // The below is to improve font rendering on macOS
+        // Feel free to remove it if you don't need it
+        -webkit-font-smoothing: antialiased;
     }
 }
 

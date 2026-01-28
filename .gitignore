@@ -42,3 +42,6 @@ pnpm-lock.yaml
 
 # prisma output
 /src/prisma/generated*
+
+# cloudflare vars
+.dev.vars
