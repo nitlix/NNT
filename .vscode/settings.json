@@ -1,3 +1,11 @@
 {
-    "css.customData": [".vscode/tailwind.json"]
+    "css.customData": [".vscode/tailwind.json"],
+    "tailwindCSS.experimental.configFile": {
+        "src/lib/tailwind.css": "src/**"
+    },
+    "tailwindCSS.includeLanguages": {
+        "typescript": "typescript",
+        "typescriptreact": "typescriptreact"
+    },
+    "tailwindCSS.lint.suggestCanonicalClasses": "ignore"
 }
