@@ -1,0 +1,100 @@
+@import "tailwindcss";
+@config "../../tailwind.config.js";
+
+@layer base {
+    :root {
+        --spacing: 7rem;
+        --letter-spacing-multiplier: -0.025;
+        --transition: 0.5s ease-in-out;
+    }
+
+    @media (width < 1000px) {
+        :root {
+            --spacing: 5rem;
+        }
+    }
+
+    @media (width < 800px) {
+        :root {
+            --spacing: 1rem;
+        }
+    }
+
+    * {
+        @apply box-border;
+
+        /* The below is to improve font rendering on macOS */
+        /* Feel free to remove it if you don't need it */
+        -webkit-font-smoothing: antialiased;
+    }
+
+    body {
+        @apply text-black bg-white grid place-items-center;
+    }
+
+    [data-theme="dark"] body {
+        @apply bg-black text-white;
+    }
+
+    h1,
+    h2,
+    h3,
+    h4,
+    h5 {
+        @apply leading-[1.1];
+    }
+
+    h1 {
+        @apply font-[500] text-[4rem] tracking-tight;
+    }
+
+    h2 {
+        @apply font-[500] text-[3rem] tracking-tight;
+    }
+
+    h3 {
+        @apply font-[500] text-[2rem] tracking-tighter;
+    }
+
+    h4 {
+        @apply font-[500] text-[1.5rem] tracking-tight;
+    }
+
+    h5 {
+        @apply font-[500] text-[1.25rem] tracking-tight;
+    }
+
+    p {
+        @apply leading-[1.2] font-[500] text-neutral-500 text-[1rem];
+    }
+
+    a {
+        @apply no-underline text-[var(--primary)];
+    }
+
+    button {
+        @apply cursor-pointer outline-none border-0 font-[inherit];
+    }
+
+    input {
+        @apply outline-none font-[inherit];
+    }
+
+    ::placeholder {
+        @apply text-neutral-500;
+    }
+}
+
+@layer components {
+    ._nitlix {
+        @apply relative overflow-hidden z-0 w-full flex flex-col justify-center items-center;
+    }
+
+    ._nitlix > * {
+        @apply px-[var(--spacing)];
+    }
+
+    p.big {
+        @apply font-semibold text-[1.25rem];
+    }
+}

@@ -1,7 +1,7 @@
 // =====================
 // Global CSS Imports
 // =====================
-import "./globals.scss";
+import "./globals.css";
 import "./animations.scss";
 
 // =====================

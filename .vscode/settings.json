@@ -1,7 +1,7 @@
 {
     "css.customData": [".vscode/tailwind.json"],
     "tailwindCSS.experimental.configFile": {
-        "src/lib/tailwind.css": "src/**"
+        "src/app/globals.css": "src/**"
     },
     "tailwindCSS.includeLanguages": {
         "typescript": "typescript",
