@@ -1,21 +1,23 @@
 <p align="center">
-    <img src="https://static.nitlix.pro/github/nnt_new.png" align="center" />
+    <img src="https://static.nitlix.net/github/NNT3.jpeg" align="center" />
 </p>
 
 ## The #1 Next.JS Template 💖 - Star for a cookie 🍪
 
 This is a [Next.js](https://nextjs.org/) template created for scaffolding web apps for production in a click. It includes:
 
--   Geist font.
--   Theme provider by next-themes
--   Lenis built-in and an optimised version of AOS. (nitlix-aos)
--   A Navigation manager and provider (for page transitions) with AutoScroll via Lenis.
--   Metagen - A function to be exported/used that generates meta tags for the page on the fly. (nitlix-metagen)
--   Quickstart global.scss and animations.scss
--   SASS already installed, tailwind ready to fly.
--   4 Fonts to start with: Neue Montreal, Neutral Grotesk, Inter and Strretch Sans.
--   Prisma ready to launch! (Just create the .env vars)
--   Prebuilt I18N support via automatic management in the middleware.
+- Geist font
+- Theme provider (next-themes)
+- Lenis smooth scroll
+- Custom AOS initialiser (nitlix-aos)
+- A Navigation manager and provider
+- Metagen - Automatic meta-tag generation (nitlix-metagen)
+- Quickstart global.css and animations.scss
+- SCSS
+- Tailwind
+- 4 Fonts: Neue Montreal, Neutral Grotesk, Inter and Strretch Sans.
+- Drizzle ORM
+- i18n support via Next.js Proxy
 
 ## Quickstarting using create-napp
 
