@@ -3,6 +3,7 @@
 //===================================
 
 import Lenis from "lenis";
+import createDb from "../db/createDb";
 
 export type AsyncReturnType<T extends (...args: any) => any> = T extends (
     ...args: any
@@ -28,3 +29,8 @@ export type LenisScrolltoProperties = {
 
 export type ThemeStyle = "dark" | "light";
 export type ThemeTheme = ThemeStyle | "system";
+
+export type DB = ReturnType<typeof createDb>;
+
+export type QueryArgs<T extends keyof DB['query']> =
+    Parameters<DB['query'][T]['findFirst']>[0];
