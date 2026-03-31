@@ -1,90 +1,82 @@
 <p align="center">
-    <img src="https://static.nitlix.net/github/NNT3.jpeg" align="center" />
+    <img src="https://static.nitlix.net/github/NNT3.webp" align="center" />
 </p>
 
-## The #1 Next.JS Template 💖 - Star for a cookie 🍪
+## NNT (Next.js Template) — ship faster
 
-This is a [Next.js](https://nextjs.org/) template created for scaffolding web apps for production in a click. It includes:
+NNT is a **production-lean Next.js App Router starter** with opinionated UX defaults (smooth scroll + navigation helpers), modern styling, optional DB wiring, and **Cloudflare Workers** support.
 
-- Geist font
-- Theme provider (next-themes)
-- Lenis smooth scroll
-- Custom AOS initialiser (nitlix-aos)
-- A Navigation manager and provider
-- Metagen - Automatic meta-tag generation (nitlix-metagen)
-- Quickstart global.css and animations.scss
-- SCSS
-- Tailwind
-- 4 Fonts: Neue Montreal, Neutral Grotesk, Inter and Strretch Sans.
-- Drizzle ORM
-- i18n support via Next.js Proxy
+If you’re evaluating templates, this README is written to help you decide quickly.
 
-## Quickstarting using create-napp
+## Template fit (pick this when…)
+
+- **You want**: a clean App Router baseline with theming, metadata defaults, smooth scrolling, and a small navigation “backbone”.
+- **You don’t want**: a huge starter with auth/payments/content systems prebuilt.
+- **You may also want**: a Worker in the same repo for edge endpoints / webhooks / background-ish edge tasks.
+
+## What you get out of the box
+
+- **Next.js App Router**: `src/app/*`
+- **Theme switching**: `next-themes` + CSS variables in `src/backbone/themes.scss`
+- **Smooth scrolling**: Lenis integrated via `src/backbone/Backbone.tsx`
+- **Navigation helper**: `NavigationContext.navigate(...)` + `<BetterA />` link component
+- **AOS**: `nitlix-aos` initialized on route changes (`src/lib/Aos/Aos.tsx`)
+- **Metadata defaults**: `nitlix-metagen` in `src/app/layout.tsx`
+- **Styling**: Tailwind + SCSS (`src/app/globals.css`, `src/app/animations.scss`)
+- **Database (optional)**: Drizzle ORM + Neon serverless Postgres (`src/db/*`)
+- **i18n routing (optional)**:
+    - Locale route segment: `src/app/[locale]/page.tsx`
+    - Locale redirect logic present in `src/proxy.ts` (wire it as middleware if you want redirects)
+- **Cloudflare Workers (optional)**:
+    - Entrypoint: `src/cloudflare/worker.ts`
+    - Config: `wrangler.jsonc`
+
+## Quickstart
+
+### Option A — CLI (create-napp)
+
+If you use `create-napp`, install it with pnpm and run it:
 
 ```bash
-# First install the create-napp package globally
-npm i create-napp@latest -g
-```
-
-then run the create-napp command to initialise this template.
-
-```bash
+pnpm add -g create-napp@latest
 create-napp
 ```
 
-You'll be prompted with this:
+### Option B — Clone
 
 ```bash
-? Setup the project in...? »
-# Use "." or "./" for the local folder.
-# Use a foldername to setup the project in that folder. (It will be created if it doesn't exist
-```
-
-## Cloning
-
-To initialise this template, choose one of the following options:
-
-### Option 1: Folder already exists
-
-```bash
-gh repo clone Nitlix/NNT .
-```
-
-### Option 2: Folder does not exist
-
-```bash
-gh repo clone Nitlix/NNT <folder-name>
-# the folder name is optional
-```
-
-### Option 3: Forking
-
-```bash
-gh repo fork Nitlix/NNT
-```
-
-## Getting Started
-
-Firstly install the dependencies:
-
-```bash
-npm i
-# or
-yarn
-# or
+gh repo clone Nitlix/NNT <your-project>
+cd <your-project>
 pnpm i
-```
-
-Then, run the development server:
-
-```bash
-npm run dev
-# or
-yarn dev
-# or
 pnpm dev
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+Then open `http://localhost:3000`.
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+## Common commands (pnpm)
+
+```bash
+pnpm dev        # Next dev server
+pnpm build      # Next build
+pnpm start      # Next start
+pnpm lint       # Next lint
+pnpm ws         # Wrangler dev (Cloudflare Worker)
+pnpm wt         # Wrangler types (Cloudflare Worker)
+```
+
+## Environment variables
+
+- **`DATABASE_URL`**: required if you use Drizzle/Neon (`src/db/db.ts`) or run drizzle tooling (`drizzle.config.ts`).
+
+## Where to edit things
+
+- **App shell**: `src/app/layout.tsx` (theme provider, backbone, AOS, metadata defaults)
+- **Locale page**: `src/app/[locale]/page.tsx`
+- **Theme switch UI**: `src/components/ThemeSwitcher.tsx`
+- **Navigation/smooth scroll**: `src/backbone/Backbone.tsx`
+- **DB schema**: `src/db/schema.ts`
+- **Worker**: `src/cloudflare/worker.ts` + `wrangler.jsonc`
+
+## For contributors / agents
+
+See `FOR_AGENTS.md` for a repo-wide overview (structure, modules, scripts, and the worker setup).
