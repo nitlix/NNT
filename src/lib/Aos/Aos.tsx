@@ -1,7 +1,7 @@
 "use client";
 
 import "./Aos.css";
-import Aos from "nitlix-aos";
+import Aos from "@nitlix-hq/aos";
 import { usePathname } from "next/navigation";
 import { useEffect } from "react";
 

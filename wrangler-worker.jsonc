@@ -1,0 +1,53 @@
+{
+    "name": "nnt-worker",
+    "main": "src/cloudflare/worker.ts",
+    "compatibility_date": "2026-03-17",
+    "compatibility_flags": ["nodejs_compat"],
+
+    // Include your Durable Objects here
+    // "durable_objects": [
+    //     {
+    //         "binding": "DO",
+    //         "class_name": "Server",
+    //         "preview_class_name": "Server",
+    //         "remote": false,
+    //     },
+    // ],
+
+    //Include your KV namespaces here
+    // "kv_namespaces": [
+    //     {
+    //         "binding": "KV",
+    //         "namespace_id": "nnt",
+    //         "preview_namespace_id": "nnt",
+    //         "remote": true,
+    //     },
+    // ],
+
+    //Include your D1 databases here
+    // "d1_databases": [
+    //     {
+    //         "binding": "D1",
+    //         "database_name": "nnt",
+    //         "preview_database_name": "nnt",
+    //         "remote": true,
+    //     },
+    // ],
+
+    // Include your R2 buckets here
+    // "r2_buckets": [
+    //     {
+    //         "binding": "R2",
+    //         "bucket_name": "nnt",
+    //         "preview_bucket_name": "nnt",
+    //         "remote": true,
+    //     },
+    // ],
+    "observability": {
+        "enabled": true,
+    },
+    "keep_vars": true,
+
+    // Environment Variables
+    "vars": {},
+}

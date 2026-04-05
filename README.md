@@ -8,6 +8,10 @@ NNT is a **production-lean Next.js App Router starter** with opinionated UX defa
 
 If you’re evaluating templates, this README is written to help you decide quickly.
 
+## Vinext vs plain Next.js
+
+This repo may ship with **Vinext** (Vite-based) scripts by default. If you want to run **Next.js** only—drop Vinext, Vite, and the optional site worker—ask your local AI (Cursor, Copilot, etc.) to read and follow **`DISABLE_VINEXT.md`**. That doc lists the exact `package.json` changes, what to uninstall, and which files to delete.
+
 ## Template fit (pick this when…)
 
 - **You want**: a clean App Router baseline with theming, metadata defaults, smooth scrolling, and a small navigation “backbone”.

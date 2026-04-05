@@ -50,5 +50,6 @@ pnpm-lock.yaml
 
 # nitlix intelligence various
 /.ni
-NIX.md
-ER8.md
+ER*.md
+NWS*.md
+/dist/

@@ -45,23 +45,23 @@
     }
 
     h1 {
-        @apply font-[500] text-[4rem] tracking-tight;
+        @apply font-[600] text-[4rem] tracking-tight;
     }
 
     h2 {
-        @apply font-[500] text-[3rem] tracking-tight;
+        @apply font-[600] text-[3rem] tracking-tight;
     }
 
     h3 {
-        @apply font-[500] text-[2rem] tracking-tighter;
+        @apply font-[600] text-[2rem] tracking-tighter;
     }
 
     h4 {
-        @apply font-[500] text-[1.5rem] tracking-tight;
+        @apply font-[600] text-[1.5rem] tracking-tight;
     }
 
     h5 {
-        @apply font-[500] text-[1.25rem] tracking-tight;
+        @apply font-[600] text-[1.25rem] tracking-tight;
     }
 
     p {

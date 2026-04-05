@@ -18,7 +18,7 @@ import "@/backbone/themes.scss";
 // =====================
 // Geist Font (By Vercel)
 // =====================
-import { GeistSans } from "geist/font/sans";
+import { GeistSans } from "@/fonts/Geist/GeistSans";
 
 // =====================
 // Custom Font (Neue Montreal)
