@@ -6,11 +6,13 @@
 
 NNT is a **production-lean Next.js App Router starter** with opinionated UX defaults (smooth scroll + navigation helpers), modern styling, optional DB wiring, and **Cloudflare Workers** support.
 
+**Bundling and dev:** this template ships with **Vinext** as the default bundler and dev server (`pnpm dev`, `pnpm build`, etc.). Vinext sits on top of Vite and targets the same App Router codebase; you still author a normal Next.js app.
+
 If you’re evaluating templates, this README is written to help you decide quickly.
 
 ## Vinext vs plain Next.js
 
-This repo may ship with **Vinext** (Vite-based) scripts by default. If you want to run **Next.js** only—drop Vinext, Vite, and the optional site worker—ask your local AI (Cursor, Copilot, etc.) to read and follow **`DISABLE_VINEXT.md`**. That doc lists the exact `package.json` changes, what to uninstall, and which files to delete.
+If you want to run **plain Next.js** only—no Vinext, no Vite, and no optional Vinext site worker—ask your local AI (Cursor, Copilot, etc.) to read and follow **`DISABLE_VINEXT.md`**. That doc lists the exact `package.json` changes, what to uninstall, and which files to delete.
 
 ## Template fit (pick this when…)
 
@@ -20,6 +22,7 @@ This repo may ship with **Vinext** (Vite-based) scripts by default. If you want 
 
 ## What you get out of the box
 
+- **Vinext by default**: Vite-based bundler and CLI for dev/build/start/lint (`package.json` scripts); swap to plain Next via `DISABLE_VINEXT.md` if you prefer.
 - **Next.js App Router**: `src/app/*`
 - **Theme switching**: `next-themes` + CSS variables in `src/backbone/themes.scss`
 - **Smooth scrolling**: Lenis integrated via `src/backbone/Backbone.tsx`
@@ -60,10 +63,10 @@ Then open `http://localhost:3000`.
 ## Common commands (pnpm)
 
 ```bash
-pnpm dev        # Next dev server
-pnpm build      # Next build
-pnpm start      # Next start
-pnpm lint       # Next lint
+pnpm dev        # Vinext dev (Vite-based; default)
+pnpm build      # Vinext build
+pnpm start      # Vinext start
+pnpm lint       # Vinext lint
 pnpm ws         # Wrangler dev (Cloudflare Worker)
 pnpm wt         # Wrangler types (Cloudflare Worker)
 ```
