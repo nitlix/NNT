@@ -47,3 +47,8 @@ pnpm-lock.yaml
 .dev.vars*
 .wrangler*
 
+
+# nitlix intelligence various
+/.ni
+NIX.md
+ER8.md
