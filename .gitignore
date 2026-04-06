@@ -52,4 +52,6 @@ pnpm-lock.yaml
 /.ni
 ER*.md
 NWS*.md
+
+# vinext output
 /dist/

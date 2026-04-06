@@ -7,7 +7,7 @@
       "dependencies": {
         "@cloudflare/vite-plugin": "^1.31.0",
         "@neondatabase/serverless": "^1.0.2",
-        "@nitlix-hq/aos": "^1.0.1",
+        "@nitlix-hq/aos": "^1.0.2",
         "@paralleldrive/cuid2": "^3.3.0",
         "@tailwindcss/postcss": "^4.2.1",
         "@vercel/edge": "latest",
@@ -235,7 +235,7 @@
 
     "@next/swc-win32-x64-msvc": ["@next/swc-win32-x64-msvc@16.1.6", "", { "os": "win32", "cpu": "x64" }, "sha512-NRfO39AIrzBnixKbjuo2YiYhB6o9d8v/ymU9m/Xk8cyVk+k7XylniXkHwjs4s70wedVffc6bQNbufk5v0xEm0A=="],
 
-    "@nitlix-hq/aos": ["@nitlix-hq/aos@1.0.1", "", { "peerDependencies": { "typescript": "^5.9.3" } }, "sha512-Erx72XrJ8tpgEKso/V5XAIcBtVcMArj6Cb6wlZxVJGC7arty6EbMmBU0zsp4hiF6Us+jBguN+N9g64MC6K/f0g=="],
+    "@nitlix-hq/aos": ["@nitlix-hq/aos@1.0.2", "", { "peerDependencies": { "typescript": "^5.9.3" } }, "sha512-aVeR4Q4sO8bEeKPp7lZW/wyCEXByCLRHmwZWubUbrNYVu8GmUMEzfT62ylh8Jk3jGQxcHdkINi4aQCGB5kjbLA=="],
 
     "@noble/hashes": ["@noble/hashes@2.0.1", "", {}, "sha512-XlOlEbQcE9fmuXxrVTXCTlG2nlRXa9Rj3rr5Ue/+tX+nmkgbX720YHh0VR3hBF9xDvwnb8D2shVGOwNx+ulArw=="],
 
