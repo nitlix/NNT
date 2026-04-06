@@ -17,6 +17,7 @@
         "@nitlix-hq/aos": "^1.0.2",
         "@paralleldrive/cuid2": "^3.3.0",
         "@tailwindcss/postcss": "^4.2.1",
+        "@tailwindcss/vite": "^4.2.2",
         "@vercel/edge": "latest",
         "cloudflare": "^5.2.0",
         "drizzle-orm": "^0.45.1",
