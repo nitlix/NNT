@@ -30,7 +30,7 @@ type NavigationContextType = {
 };
 
 export const NavigationContext = createContext<NavigationContextType>(
-    null as any
+    null as any,
 );
 
 // =================================================
@@ -146,7 +146,7 @@ export default function ({ children, className = "" }: BackboneProps) {
         scroll = false,
         scrolltoProperties: LenisScrolltoProperties = {
             offset: -200,
-        }
+        },
     ) {
         const currentPage = window.location.pathname.split("#")[0];
         const newPage = url.split("#")[0];
@@ -161,7 +161,7 @@ export default function ({ children, className = "" }: BackboneProps) {
                 if (SPController == "ENABLE" && scroll) {
                     getScroll()?.scrollTo(
                         `#${newLocation}`,
-                        scrolltoProperties
+                        scrolltoProperties,
                     );
                 } else {
                     const el = document.getElementById(newLocation);
@@ -188,13 +188,13 @@ export default function ({ children, className = "" }: BackboneProps) {
                         if (SPController == "ENABLE" && scroll) {
                             getScroll()?.scrollTo(
                                 newLocation,
-                                scrolltoProperties
+                                scrolltoProperties,
                             );
                         } else {
                             if (scroll) {
                                 // Try to get element
                                 const el = document.getElementById(
-                                    newLocation.replace("#", "")
+                                    newLocation.replace("#", ""),
                                 );
                                 if (el) {
                                     el.scrollIntoView();
@@ -213,6 +213,9 @@ export default function ({ children, className = "" }: BackboneProps) {
                             }
                         }
                     }
+
+                    setNavigating(false);
+                    setTransitionActive(false);
                 }, 500);
             }, 250);
         }

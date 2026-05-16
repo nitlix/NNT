@@ -13,19 +13,9 @@ export type AsyncReturnType<T extends (...args: any) => any> = T extends (
 export type SearchParams = Promise<{
     [key: string]: string | string[] | undefined;
 }>;
-export type LenisScrolltoProperties = {
-    offset?: number;
-    immediate?: boolean;
-    lock?: boolean;
-    duration?: number;
-    easing?: any;
-    lerp?: number;
-    onStart?: (lenis: Lenis) => void;
-    onComplete?: (lenis: Lenis) => void;
-    force?: boolean;
-    programmatic?: boolean;
-    userData?: object;
-};
+export type LenisScrolltoProperties = NonNullable<
+    Parameters<Lenis["scrollTo"]>[1]
+>;
 
 export type ThemeStyle = "dark" | "light";
 export type ThemeTheme = ThemeStyle | "system";
