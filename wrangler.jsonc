@@ -1,7 +1,11 @@
 {
+    "$schema": "node_modules/wrangler/config-schema.json",
     "name": "nnt-siteworker",
-    "main": "worker/index.ts",
-    "compatibility_date": "2026-03-17",
+    "main": "vinext/server/app-router-entry",
+    "compatibility_date": "2026-05-15",
     "compatibility_flags": ["nodejs_compat"],
     "keep_vars": true,
+    "assets": {
+        "not_found_handling": "none",
+    },
 }
