@@ -55,3 +55,4 @@ NWS*.md
 
 # vinext output
 /dist/
+/.vinext/
