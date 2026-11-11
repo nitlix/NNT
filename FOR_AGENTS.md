@@ -56,7 +56,17 @@ Useful scripts from `package.json`:
 
 ## Environment variables
 
-- **`DATABASE_URL`**: required if you use `src/db/db.ts` or run drizzle tooling configured by `drizzle.config.ts`.
+`.env` files are loaded by `vite.env.ts`, wired up in `vite.config.ts`, so this works with plain `vite dev` / `vite build` (vinext 1.x no longer preloads them for you).
+
+- **Load order** (highest first): shell/CI → `.env.<mode>.local` → `.env.local` → `.env.<mode>` → `.env`. `vite dev` is `development`, `vite build` is `production`.
+- **`NEXT_PUBLIC_*`**: baked into **both** server and client bundles.
+- **Everything else**: baked into **server bundles only** (server components, route handlers, actions), never into browser bundles.
+- Values are baked in at build time because a deployed Worker never reads `.env`.
+- **Cloudflare dashboard**: *Build variables* behave like the shell: `NEXT_PUBLIC_*` gets baked into server + client, other build variables do **not** reach server code. Put server-only values in the Worker's runtime *Variables and Secrets*; server code reads them via `process.env` at runtime (`nodejs_compat`).
+- To override a value for one build, set it in the shell: `SOME_KEY=x bun run build`.
+- Restart `bun run dev` after editing `.env`.
+
+- **`DATABASE_URL`**: required if you use Drizzle/Neon (`src/db/db.ts`) or run drizzle tooling (`drizzle.config.ts`).
 
 ## Common commands (pnpm)
 
